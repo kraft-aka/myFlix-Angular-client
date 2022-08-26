@@ -3,11 +3,33 @@ $cardColor: #fff;
 $textColor: #343a40;
 $boxShadowColor: #e9ecef;
 
-.navbar {
-  border-bottom: $boxShadowColor;
+.welcome-view {
+  background-color: $backgroundColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 40px;
+}
+
+.welcome-card {
+  margin-top: 100px;
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+  box-shadow: 10px 5px 5px $boxShadowColor;
   background-color: $cardColor;
 }
 
-.logout-button {
-  float: right;
+.welcome-card-header {
+  margin-bottom: 20px;
+  color: $textColor;
+  display: flex;
+  justify-content: center;
+  width: 280px;
+}
+
+.mat-card>.mat-card-actions:last-child {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-around;
 }
