@@ -63,12 +63,10 @@ export class FetchApiDataService {
   }
 
   // API call to get one movie (method:GET)
-  getOneMovie(title: any): Observable<any> {
+  getFavoriteMovies(): Observable<any> {
     return this.http
-      .get(apiUrl + `movies/${title}`, {
-        headers: new HttpHeaders({
-          Authorization: 'Bearer ' + token,
-        }),
+      .get(`${apiUrl}users/${username}/movies`, {
+        headers: new HttpHeaders({ Authorization: 'Bearer ' + token }),
       })
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
@@ -98,18 +96,20 @@ export class FetchApiDataService {
   // API call to get favorite movies for a user
 
   // API call to add a movie to favorite Movies list (method: POST)
-  addFavoriteMovies(movieID: number): Observable<any> {
+  addFavoriteMovies(movieID: string): Observable<any> {
     return this.http
-      .post(apiUrl + `users/${username}` + `movies/${movieID}`, {
-        headers: new HttpHeaders({
-          Authorization: 'Bearer ' + token,
-        }),
-      })
+      .put(
+        `${apiUrl}users/${username}/movies/${movieID}`,
+        { FavoriteMovie: movieID },
+        {
+          headers: new HttpHeaders({ Authorization: 'Bearer ' + token }),
+        }
+      )
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   // API call to delete a movie from the favorite movies (method:DELETE)
-  deleteMovie(movieID: number): Observable<any> {
+  deleteMovie(movieID: string): Observable<any> {
     return this.http
       .delete(apiUrl + `users/${username}` + `movies/${movieID}`, {
         headers: new HttpHeaders({
