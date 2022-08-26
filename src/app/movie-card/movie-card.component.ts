@@ -25,7 +25,7 @@ export class MovieCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovies(),
-    this.getFavoriteMovie()
+    this.getFavoriteMovie('625984c3eeb21d42100dd52d')
   }
 
   getMovies(): void {
@@ -36,23 +36,33 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  getFavoriteMovie(): void {
-    this.fetchApiDataService.getFavoriteMovies().subscribe((resp: any)=> {
-      this.favoriteMovies = resp;
-      console.log(this.favoriteMovies);
-      return this.favoriteMovies;
+  // getFavoriteMovie(): void {
+  //   this.fetchApiDataService.getFavoriteMovies().subscribe((resp: any)=> {
+  //     this.favoriteMovies = resp;
+  //     console.log(this.favoriteMovies);
+  //     return this.favoriteMovies;
+  //   })
+  // }
+
+  getFavoriteMovie(id: string):void {
+    this.fetchApiDataService.getUser().subscribe((resp:any)=> {
+      const favMovieId = resp.FavoriteMovies.map((movie:any)=> movie._id);
+      return favMovieId.includes(id)
     })
   }
 
-  isFav(id: string): boolean {
-    return this.favoriteMovies.includes(id)
-  }
+  // isFav(id: string): boolean {
+  //   return this.favoriteMovies.includes(id)
+  // }
 
   addToFavoriteMovies(id: string): void {
-    this.fetchApiDataService.addFavoriteMovies(id).subscribe((resp: any)=> {
-      console.log(id);
-      this.ngOnInit();
-    })
+    this.fetchApiDataService.addFavoriteMovies(id).subscribe((resp: any) => {
+      console.log(resp, id);
+      this.snackBar.open('Movie added to Favorite Movies', 'OK', {
+        duration: 2000,
+        panelClass: 'snackbar',
+      });
+    });
   }
 
   deleteFromFavoriteMovies(id: string): void {

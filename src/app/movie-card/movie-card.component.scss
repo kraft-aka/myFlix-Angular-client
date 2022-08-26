@@ -63,3 +63,16 @@ img {
 .mat-button:hover, .mat-icon:hover {
   cursor: pointer;
 }
+
+mat-icon {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  line-height: 1.2;
+}
+mat-icon:hover {
+  color: #ff0000;
+}
+mat-icon:active {
+  transform: scale(0.8);
+}
