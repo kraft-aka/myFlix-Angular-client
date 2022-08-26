@@ -3,6 +3,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { EditProfileComponent } from '../edit-profile/edit-profile.component';
 
 import { Router } from '@angular/router';
 
@@ -48,7 +49,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   openEditUserProfileDialog(): void {
-    this.dialog.open(UserProfileComponent, {
+    this.dialog.open(EditProfileComponent, {
       width: '280px',
     });
   }

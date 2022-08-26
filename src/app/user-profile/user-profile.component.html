@@ -1,27 +1,24 @@
-<div class="profile-view" style="display: flex;">
-  <mat-card style="flex: 1 1 auto;">
-    <mat-card-header>
+<app-navbar></app-navbar>
+<div class="user-profile-page" style="display: flex;">
+  <mat-card class="user-profile-card" style="flex: 1 1 auto;">
+    <mat-card-header class="user-profile-card-header">
       <mat-card-title>{{user.Username | uppercase }}'s Details</mat-card-title>
     </mat-card-header>
-    <mat-card-subtitle>User: {{user.Username}}</mat-card-subtitle>
-    <mat-card-subtitle>Email: {{user.Email}}</mat-card-subtitle>
-    <mat-card-subtitle>Birthday: {{user.Birthday | date }}</mat-card-subtitle>
-    <mat-card-actions>
-      <button 
-      mat-raised-button
-      (click)="openEditUserProfileDialog()"
-      color="primary"
-      >Edit Profile
-    </button>
-    <button 
-      mat-raised-button
-      (click)="deleteProfile()"
-      color="warn"
-      >
-      <mat-icon>delete_forever</mat-icon>
-      Delete Profile
-    </button>
+    <mat-card-content class="user-profile-card-content">
+      <p><strong>Username:</strong> {{ user.Username }}</p>
+      <p><strong>Email:</strong> {{ user.Email }}</p>
+      <p><strong>Birthday:</strong> {{ user.Birthday | date }}</p>
+    </mat-card-content>
+
+    <mat-card-actions class="user-profile-actions">
+      <button mat-raised-button (click)="openEditUserProfileDialog()" color="primary">
+        <mat-icon>edit</mat-icon> Edit Profile
+      </button>
+      <button mat-raised-button (click)="deleteProfile()" color="warn">
+        <mat-icon>delete_forever</mat-icon>
+        Delete Profile
+      </button>
     </mat-card-actions>
   </mat-card>
-  
+
 </div>
