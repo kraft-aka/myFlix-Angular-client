@@ -24,11 +24,13 @@ $boxShadowColor: #e9ecef;
   width: 280px;
   margin: 15px;
   padding: 20px 3px;
-  transition: box-shadow 1s linear;
+  transition: all .2s ease-in-out;
 }
 
 .mat-card:hover {
   box-shadow: 15px 10px 10px 5px $boxShadowColor;
+  transform: scale(1.1,1.1);
+  z-index: 999;
 }
 
 .mat-card-header {
