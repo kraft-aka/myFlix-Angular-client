@@ -13,7 +13,8 @@ export class DirectorComponent implements OnInit {
     public data: {
       Name: string,
       Bio: string,
-      Birth: string
+      Birth: string,
+      Death: string
     }
   ) { }
 

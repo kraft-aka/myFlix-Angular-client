@@ -72,12 +72,13 @@ export class MovieCardComponent implements OnInit {
     })
   }
 
-  openDirectorDialog(name:string, bio: string, birthday: string): void {
+  openDirectorDialog(name:string, bio: string, birthday: string, death: string): void {
     this.dialog.open(DirectorComponent, {
       data: {
         Name: name,
         Bio: bio,
-        Birth: birthday
+        Birth: birthday,
+        Death: death
       },
       width: '500px'
     })
