@@ -50,14 +50,14 @@ export class MovieCardComponent implements OnInit {
 
   addToFavoriteMovies(id: string): void {
     this.fetchApiDataService.addFavoriteMovies(id).subscribe((resp: any)=> {
-      console.log(resp);
+      console.log(id);
       this.ngOnInit();
     })
   }
 
   deleteFromFavoriteMovies(id: string): void {
     this.fetchApiDataService.deleteMovie(id).subscribe((resp: any)=> {
-      console.log(resp);
+      console.log(id);
       this.ngOnInit();
     })
   }
