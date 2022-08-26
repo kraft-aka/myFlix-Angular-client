@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 
 import { DirectorComponent } from '../director/director.component';
+import { GenreComponent } from '../genre/genre.component';
 
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { BinaryOperator } from '@angular/compiler';
+
 
 @Component({
   selector: 'app-movie-card',
@@ -29,6 +30,16 @@ export class MovieCardComponent implements OnInit {
       console.log(this.movies);
       return this.movies;
     });
+  }
+
+  openGenreDialog(name: string, description: string): void {
+    this.dialog.open(GenreComponent, {
+      data: {
+        Name: name,
+        Description: description
+      },
+      width: '500px'
+    })
   }
 
   openDirectorDialog(name:string, bio: string, birthday: string): void {
