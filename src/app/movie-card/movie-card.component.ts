@@ -3,6 +3,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 
 import { DirectorComponent } from '../director/director.component';
 import { GenreComponent } from '../genre/genre.component';
+import { SynopsisComponent } from '../synopsis/synopsis.component';
 
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -48,6 +49,16 @@ export class MovieCardComponent implements OnInit {
         Name: name,
         Bio: bio,
         Birth: birthday
+      },
+      width: '500px'
+    })
+  }
+
+  openSynopsisDialog(title: string, description: string): void {
+    this.dialog.open(SynopsisComponent, {
+      data: {
+        Title: title,
+        Description: description
       },
       width: '500px'
     })

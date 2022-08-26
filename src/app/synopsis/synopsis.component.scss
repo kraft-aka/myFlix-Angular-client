@@ -3,25 +3,25 @@ $cardColor: #fff;
 $textColor: #343a40;
 $boxShadowColor: #e9ecef;
 
-.director-dialog {
+.synopsis-dialog {
   background-color: $cardColor;
   margin-top: 0;
   box-shadow: none;
 }
 
-.director-dialog-title {
+.synopsis-dialog-title {
   color: $textColor;
 }
 
-.director-dialog-content {
+.synopsis-dialog-content {
   color: $textColor;
 }
 
-::ng-deep .director-custom>mat-dialog-container {
+::ng-deep .synopsis-custom>mat-dialog-container {
   background-color: $cardColor;
 }
 
-.director-close-button {
+.synopsis-close-button.mat-stroked-button {
   position: absolute;
   top: 0;
   right: 0;
@@ -34,6 +34,6 @@ $boxShadowColor: #e9ecef;
   cursor: pointer;
 }
 
-.director-close-button:hover {
+.synopsis-close-button:hover {
   color: #ff0000;
 }

@@ -31,6 +31,10 @@
           <button
               mat-button
               color="primary"
+              (click)="openSynopsisDialog(
+                movie.Title,
+                movie.Description
+              )"
           >
               Synopsis
           </button>
