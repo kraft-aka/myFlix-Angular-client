@@ -26,12 +26,16 @@ import { DirectorComponent } from './director/director.component';
 import { GenreComponent } from './genre/genre.component';
 import { SynopsisComponent } from './synopsis/synopsis.component';
 
+/**
+ * This variable contains the main routes of the application
+ * @param Array{}
+ */
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
   { path: 'profile', component: UserProfileComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
-]
+];
 
 @NgModule({
   declarations: [
@@ -45,7 +49,7 @@ const appRoutes: Routes = [
     NavbarComponent,
     DirectorComponent,
     GenreComponent,
-    SynopsisComponent
+    SynopsisComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +67,6 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

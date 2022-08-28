@@ -26,6 +26,10 @@ export class UserProfileComponent implements OnInit {
     this.getUser();
   }
 
+  /**
+   * Gets a user from API
+   * @function getUser
+   */
   getUser(): void {
     this.fetchApiDataService.getUser().subscribe((resp: any) => {
       this.user = resp;
@@ -34,6 +38,10 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Allows registered user to delete own profile.
+   * @function deleteProfile
+   */
   deleteProfile(): void {
     if (confirm('Do you want to delete your account?')) {
       this.router.navigate(['welcome']).then(() => {
@@ -48,6 +56,9 @@ export class UserProfileComponent implements OnInit {
     }
   }
 
+  /**
+   * Opens the edit user's propfile dialog from EditProfileComponent
+   */
   openEditUserProfileDialog(): void {
     this.dialog.open(EditProfileComponent, {
       width: '280px',
