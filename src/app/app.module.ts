@@ -28,7 +28,6 @@ import { SynopsisComponent } from './synopsis/synopsis.component';
 
 /**
  * This variable contains the main routes of the application
- * @param Array{}
  */
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
