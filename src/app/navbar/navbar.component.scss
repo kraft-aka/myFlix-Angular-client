@@ -6,6 +6,7 @@ $boxShadowColor: #e9ecef;
 .navbar {
   border-bottom: $boxShadowColor;
   background-color: $cardColor;
+  padding: 10px;
 }
 
 .logout-btn {
